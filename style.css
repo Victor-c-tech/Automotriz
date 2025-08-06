@@ -157,3 +157,47 @@ footer {
     color: #555;
     letter-spacing: 2px;
 }
+
+/* --- MEDIA QUERIES PARA ADAPTABILIDAD --- */
+
+/* Para tablets y dispositivos más pequeños */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2.2rem; /* Reducimos el tamaño del título principal */
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+}
+
+/* Para teléfonos móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1rem !important; /* Menos padding en el header */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Aún más pequeño para móviles */
+        text-shadow: 0 0 2px rgba(57, 255, 20, 0.5), 
+                     0 0 5px rgba(57, 255, 20, 0.5), 
+                     0 0 10px #39ff14; /* Efecto neón más sutil */
+    }
+
+    .subtitulo-modelo {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .card {
+        margin-bottom: 1.5rem; /* Espacio extra entre tarjetas apiladas */
+    }
+
+    .modal-dialog {
+        margin: 0.5rem; /* Margen para que el modal no pegue a los bordes */
+    }
+
+    .modal-body .row .col-sm {
+        margin-bottom: 1rem; /* Espacio entre inputs en móviles */
+    }
+}
