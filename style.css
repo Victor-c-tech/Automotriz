@@ -1,203 +1,91 @@
-/* Estilo base inspirado en "Carros de Leyenda" con temática verde */
+/* Estilos base (sin cambios) */
 body {
     font-family: 'Roboto', sans-serif;
-    color: #e0e0e0; /* Un gris claro para el texto general */
+    color: #e0e0e0;
     background-color: #0a0a0a;
     background-image: radial-gradient(circle at center, #051a05 0%, #0a0a0a 60%);
     background-size: 100% 100%;
 }
-
-/* Encabezado con título Neón */
 header {
-    background: transparent; /* Eliminamos el fondo para usar el del body */
+    background: transparent;
     text-shadow: none;
 }
-
 header h1 {
     font-family: 'Orbitron', sans-serif;
-    color: #39ff14; /* Verde Neón */
+    color: #39ff14;
     text-transform: uppercase;
-    font-size: 2.8rem; /* Ajuste ligero de tamaño */
-    /* Efecto de brillo neón para el título principal */
+    font-size: 2.8rem;
     text-shadow: 0 0 5px rgba(57, 255, 20, 0.5), 
                  0 0 10px rgba(57, 255, 20, 0.5), 
                  0 0 20px rgba(57, 255, 20, 0.5), 
                  0 0 40px #39ff14, 
                  0 0 70px #39ff14;
 }
-
-/* Estilo para el subtítulo del modelo del coche */
 .subtitulo-modelo {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 4px;
     font-weight: 300;
     text-transform: uppercase;
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7); /* Blanco semi-transparente */
-    text-shadow: 0 0 5px rgba(57, 255, 20, 0.2); /* Sutil brillo verde */
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.2);
     margin-top: -10px;
     margin-bottom: 25px;
 }
 
-/* Ajuste a la imagen para que combine mejor (sin filtro de color) */
+/* --- NUEVA REGLA PARA LA IMAGEN --- */
 header img {
+    /* Esto asegura que la imagen se reduzca si la pantalla es pequeña */
+    max-width: 100%; 
+    /* Y esto limita su tamaño en pantallas grandes para que no sea excesiva */
+    width: 800px; 
+    height: auto; /* Mantiene la proporción */
     border: 2px solid rgba(57, 255, 20, 0.3);
-    /* Se elimina el filtro 'hue-rotate' que ya no es necesario */
 }
 
-/* Tarjetas con estilo oscuro y borde verde */
-.card {
-    border: 1px solid rgba(57, 255, 20, 0.4);
-    border-radius: 15px;
-    background: rgba(10, 25, 10, 0.3); /* Fondo oscuro semi-transparente */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    transition: all 0.4s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
+/* Estilos de cards y modales (sin cambios) */
+.card { border: 1px solid rgba(57, 255, 20, 0.4); border-radius: 15px; background: rgba(10, 25, 10, 0.3); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); transition: all 0.4s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(57, 255, 20, 0.2), 0 0 15px rgba(57, 255, 20, 0.3); border-color: rgba(57, 255, 20, 0.8); }
+.card-icon { font-size: 2.5rem; color: #39ff14; text-shadow: 0 0 10px rgba(57, 255, 20, 0.7); }
+.btn { border-radius: 50px; padding: 10px 20px; font-weight: bold; border: 1px solid #39ff14; background: rgba(57, 255, 20, 0.1); color: #39ff14; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+.card .btn:hover, .modal-body .btn:hover { transform: scale(1.05); background: #39ff14; color: #0a0a0a; box-shadow: 0 0 15px rgba(57, 255, 20, 0.7); }
+.modal-content { background-color: #121212; color: #e0e0e0; border: 1px solid #39ff14; border-radius: 10px; }
+.modal-header { border-bottom: 1px solid rgba(57, 255, 20, 0.5); }
+.modal-body .nav-tabs { border-bottom: 1px solid rgba(57, 255, 20, 0.5); }
+.modal-body .nav-tabs .nav-link { background: none; border: none; color: #888; }
+.modal-body .nav-tabs .nav-link:hover { color: #fff; }
+.modal-body .nav-tabs .nav-link.active { background: none; font-weight: bold; border-bottom: 3px solid #39ff14; color: #39ff14; }
+.resultado-area { background-color: #000; border: 1px solid #222; padding: 1rem; border-radius: 8px; min-height: 60px; color: #39ff14; font-family: 'Courier New', Courier, monospace; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); }
+pre { background-color: #000; padding: 1rem; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; border: 1px solid #222; }
+code { color: #00e0b0; }
+footer { background: transparent; text-shadow: none; color: #555; letter-spacing: 2px; }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(57, 255, 20, 0.2), 0 0 15px rgba(57, 255, 20, 0.3);
-    border-color: rgba(57, 255, 20, 0.8);
-}
+/* --- MEDIA QUERIES AJUSTADAS --- */
 
-.card-icon {
-    font-size: 2.5rem;
-    color: #39ff14;
-    text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
-}
-
-/* Botón unificado con estilo verde */
-.btn {
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-weight: bold;
-    border: 1px solid #39ff14;
-    background: rgba(57, 255, 20, 0.1);
-    color: #39ff14;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Todos los botones de las tarjetas y modales tendrán el mismo estilo al pasar el ratón */
-.card .btn:hover, .modal-body .btn:hover { 
-    transform: scale(1.05);
-    background: #39ff14;
-    color: #0a0a0a;
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
-}
-
-/* Estilos de Modales oscuros y verdes */
-.modal-content {
-    background-color: #121212;
-    color: #e0e0e0;
-    border: 1px solid #39ff14;
-    border-radius: 10px;
-}
-.modal-header { 
-    border-bottom: 1px solid rgba(57, 255, 20, 0.5); 
-}
-.modal-body .nav-tabs { 
-    border-bottom: 1px solid rgba(57, 255, 20, 0.5); 
-}
-.modal-body .nav-tabs .nav-link { 
-    background: none; 
-    border: none; 
-    color: #888; 
-}
-.modal-body .nav-tabs .nav-link:hover { 
-    color: #fff; 
-}
-/* Se unifica el color de la pestaña activa para todos los modales */
-.modal-body .nav-tabs .nav-link.active { 
-    background: none; 
-    font-weight: bold; 
-    border-bottom: 3px solid #39ff14; 
-    color: #39ff14;
-}
-
-/* Eliminamos los estilos de color específicos por modal */
-#primosModal .modal-content, #fibonacciModal .modal-content, #imcModal .modal-content, #palindromoModal .modal-content {
-    border-top-color: #39ff14;
-}
-#primosModal .nav-link.active, #fibonacciModal .nav-link.active, #imcModal .nav-link.active, #palindromoModal .nav-link.active {
-    color: #39ff14; 
-    border-bottom-color: #39ff14;
-}
-
-
-/* Área de resultados estilo consola/terminal */
-.resultado-area {
-    background-color: #000;
-    border: 1px solid #222;
-    padding: 1rem;
-    border-radius: 8px;
-    min-height: 60px;
-    color: #39ff14; /* Texto de resultado en verde */
-    font-family: 'Courier New', Courier, monospace;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-}
-pre { 
-    background-color: #000; 
-    padding: 1rem; 
-    border-radius: 8px; 
-    white-space: pre-wrap; 
-    word-wrap: break-word; 
-    border: 1px solid #222;
-}
-code { 
-    color: #00e0b0; /* Un tono cian para el código para diferenciarlo */
-}
-
-footer {
-    background: transparent;
-    text-shadow: none;
-    color: #555;
-    letter-spacing: 2px;
-}
-
-/* --- MEDIA QUERIES PARA ADAPTABILIDAD --- */
-
-/* Para tablets y dispositivos más pequeños */
+/* Para tablets (hasta 992px) */
 @media (max-width: 992px) {
     header h1 {
-        font-size: 2.2rem; /* Reducimos el tamaño del título principal */
-    }
-
-    .lead {
-        font-size: 1rem;
+        font-size: 2.2rem;
     }
 }
 
-/* Para teléfonos móviles */
+/* Para móviles (hasta 768px) */
 @media (max-width: 768px) {
     header {
-        padding: 3rem 1rem !important; /* Menos padding en el header */
+        padding: 3rem 1rem !important;
     }
-
     header h1 {
-        font-size: 1.8rem; /* Aún más pequeño para móviles */
-        text-shadow: 0 0 2px rgba(57, 255, 20, 0.5), 
-                     0 0 5px rgba(57, 255, 20, 0.5), 
-                     0 0 10px #39ff14; /* Efecto neón más sutil */
+        font-size: 1.7rem; /* Tamaño de fuente más reducido */
+        line-height: 1.4;   /* Altura de línea para evitar que el texto se pegue */
+        word-break: break-word; /* Asegura que las palabras largas no desborden */
+        text-shadow: 0 0 3px rgba(57, 255, 20, 0.5), 
+                     0 0 8px #39ff14; /* Efecto neón más sutil */
     }
-
     .subtitulo-modelo {
         font-size: 1rem;
         letter-spacing: 2px;
     }
-
-    .card {
-        margin-bottom: 1.5rem; /* Espacio extra entre tarjetas apiladas */
-    }
-
     .modal-dialog {
-        margin: 0.5rem; /* Margen para que el modal no pegue a los bordes */
-    }
-
-    .modal-body .row .col-sm {
-        margin-bottom: 1rem; /* Espacio entre inputs en móviles */
+        margin: 0.5rem;
     }
 }
