@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafío de Lógica con Estilo Automotriz</title>
     
-    
     <link rel="icon" type="image/png" href="poshe.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,25 +14,17 @@
 <body>
 
     <header class="text-center p-5 text-white">
-        <!-- Se ha eliminado el span que contenía los emojis para simplificar y se han colocado dentro del h1 -->
         <h1 class="display-4 fw-bold">🏎️ Desafío de Lógica con Estilo Automotriz 🏎️</h1>
         <h2 class="subtitulo-modelo">Porsche 911 GT3 Edition</h2>
         
-        <!--
-            ****** CORRECCIÓN IMPORTANTE AQUÍ ******
-            Se eliminó el 'style="max-width: 800px;"' que impedía que la imagen se adaptara.
-            La clase 'img-fluid' ahora funcionará correctamente.
-        -->
         <img src="https://www.hdcarwallpapers.com/download/porsche_911_gt3_rs_tribute_to_carrera_rs_package_2022_4k_8k_2-3840x2160.jpg" class="img-fluid my-4 rounded shadow-lg" alt="Porsche 911 GT3 negro con detalles verdes">
         
         <p class="lead col-md-8 mx-auto">Explora 4 desafíos de lógica de programación diseñados para estimular tu mente y mejorar tus habilidades técnicas. ¡Prepárate para pensar como un verdadero desarrollador!</p>
     </header>
 
-    <!-- El resto del main, modales y footer no necesita cambios -->
-
     <main class="container py-5">
         <div class="row gy-5">
-            <!-- Cards (Sin cambios) -->
+            <!-- Cards -->
             <div class="col-lg-3 col-md-6"><div class="card h-100"><div class="card-body d-flex flex-column text-center text-white"><div class="card-icon mb-3">🧮</div><h5 class="card-title">Números Primos</h5><p class="card-text flex-grow-1">Muestra todos los números primos entre dos valores que el usuario digite.</p><button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#primosModal">🔍 Ver solución</button></div></div></div>
             <div class="col-lg-3 col-md-6"><div class="card h-100"><div class="card-body d-flex flex-column text-center text-white"><div class="card-icon mb-3">🧠</div><h5 class="card-title">Serie Fibonacci</h5><p class="card-text flex-grow-1">Muestra la serie Fibonacci hasta el número límite que el usuario indique.</p><button class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#fibonacciModal">🔍 Ver solución</button></div></div></div>
             <div class="col-lg-3 col-md-6"><div class="card h-100"><div class="card-body d-flex flex-column text-center text-white"><div class="card-icon mb-3">⚙️</div><h5 class="card-title">Cálculo de IMC</h5><p class="card-text flex-grow-1">Calcula el Índice de Masa Corporal usando altura (metros) y peso (libras).</p><button class="btn btn-success mt-auto" data-bs-toggle="modal" data-bs-target="#imcModal">🔍 Ver solución</button></div></div></div>
@@ -41,7 +32,53 @@
         </div>
     </main>
     
-    <!-- Modales (Sin cambios) -->
+    <!-- ****** CÓDIGO DE MODALES RESTAURADO ****** -->
+    <!-- Modal Números Primos -->
+    <div class="modal fade" id="primosModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">🧮 Solución: Números Primos</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#primos-ejecutar" type="button" role="tab">Ejecutar</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#primos-explicacion" type="button" role="tab">Explicación</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#primos-codigo" type="button" role="tab">Código</button></li></ul><div class="tab-content pt-4"><div class="tab-pane fade show active" id="primos-ejecutar" role="tabpanel"><h5>Prueba el código aquí</h5><div class="row g-2 align-items-end"><div class="col-sm"><label class="form-label">Desde:</label><input type="number" class="form-control" id="primoDesde" placeholder="1"></div><div class="col-sm"><label class="form-label">Hasta:</label><input type="number" class="form-control" id="primoHasta" placeholder="100"></div></div><button class="btn btn-primary mt-3" onclick="ejecutarPrimos()">Ejecutar Cálculo</button><div id="resultadoPrimos" class="resultado-area mt-3">Los resultados aparecerán aquí...</div></div><div class="tab-pane fade" id="primos-explicacion" role="tabpanel"><h6>Lógica del Programa</h6><p>Un número primo es aquel que solo es divisible por sí mismo y por 1. El programa recorre cada número en el rango que proporcionas. Para cada número, una función auxiliar verifica sus divisores. Por eficiencia, esta verificación se hace solo hasta la raíz cuadrada del número, lo que acelera mucho el proceso.</p></div><div class="tab-pane fade" id="primos-codigo" role="tabpanel"><pre><code>// Función auxiliar que determina si un número es primo.
+const esPrimo = num => {
+    if (num <= 1) return false;
+    for (let i = 2; i * i <= num; i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+};
+function ejecutarPrimos() { /* ... */ }</code></pre></div></div></div></div></div></div>
+    <!-- Modal Serie Fibonacci -->
+    <div class="modal fade" id="fibonacciModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">🧠 Solución: Serie Fibonacci</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fibo-ejecutar" type="button" role="tab">Ejecutar</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fibo-explicacion" type="button" role="tab">Explicación</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#fibo-codigo" type="button" role="tab">Código</button></li></ul><div class="tab-content pt-4"><div class="tab-pane fade show active" id="fibo-ejecutar" role="tabpanel"><h5>Prueba el código aquí</h5><label class="form-label">Mostrar la serie hasta el número:</label><input type="number" class="form-control" id="fibonacciLimite" placeholder="100"><button class="btn btn-warning mt-3" onclick="ejecutarFibonacci()">Generar Serie</button><div id="resultadoFibonacci" class="resultado-area mt-3">Los resultados aparecerán aquí...</div></div><div class="tab-pane fade" id="fibo-explicacion" role="tabpanel"><h6>Lógica del Programa</h6><p>La serie Fibonacci comienza con 0 y 1. Cada número subsiguiente es la suma de los dos anteriores (0, 1, 1, 2, 3, 5, 8...). La función crea una lista con los dos primeros valores. Luego, un bucle calcula el siguiente número y, si no excede el límite que indicaste, lo agrega a la lista y repite el proceso.</p></div><div class="tab-pane fade" id="fibo-codigo" role="tabpanel"><pre><code>function ejecutarFibonacci() {
+    const limite = parseInt(document.getElementById('fibonacciLimite').value);
+    let secuencia = [0, 1];
+    if (limite === 0) { secuencia = [0]; } 
+    else {
+        while (true) {
+            let siguienteValor = secuencia[secuencia.length - 1] + secuencia[secuencia.length - 2];
+            if (siguienteValor > limite) break;
+            secuencia.push(siguienteValor);
+        }
+    }
+    /* ... */
+}</code></pre></div></div></div></div></div></div>
+    <!-- Modal Cálculo de IMC -->
+    <div class="modal fade" id="imcModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">⚙️ Solución: Cálculo de IMC</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#imc-ejecutar" type="button" role="tab">Ejecutar</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#imc-explicacion" type="button" role="tab">Explicación</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#imc-codigo" type="button" role="tab">Código</button></li></ul><div class="tab-content pt-4"><div class="tab-pane fade show active" id="imc-ejecutar" role="tabpanel"><h5>Prueba el código aquí</h5><div class="row g-2 align-items-end"><div class="col-sm"><label class="form-label">Peso (libras):</label><input type="number" class="form-control" id="pesoLibras" placeholder="160"></div><div class="col-sm"><label class="form-label">Altura (metros):</label><input type="number" class="form-control" id="alturaMetros" step="0.01" placeholder="1.75"></div></div><button class="btn btn-success mt-3" onclick="ejecutarIMC()">Calcular IMC</button><div id="resultadoIMC" class="resultado-area mt-3">Los resultados aparecerán aquí...</div></div><div class="tab-pane fade" id="imc-explicacion" role="tabpanel"><h6>Lógica del Programa</h6><p>El Índice de Masa Corporal (IMC) es una medida que relaciona el peso y la altura. El programa sigue dos pasos clave: primero, convierte el peso que ingresas en libras a kilogramos (multiplicando por 0.453592). Segundo, aplica la fórmula estándar del IMC: `peso(kg) / altura(m)²`. Finalmente, clasifica el resultado en categorías como "Bajo peso", "Peso normal" o "Sobrepeso".</p></div><div class="tab-pane fade" id="imc-codigo" role="tabpanel"><pre><code>function ejecutarIMC() {
+    const pesoLibras = parseFloat(document.getElementById('pesoLibras').value);
+    const alturaMetros = parseFloat(document.getElementById('alturaMetros').value);
+    const pesoKg = pesoLibras * 0.453592;
+    const imc = pesoKg / (alturaMetros * alturaMetros);
+    let categoria;
+    if (imc < 18.5) categoria = 'Bajo peso';
+    else if (imc < 25) categoria = 'Peso normal';
+    else if (imc < 30) categoria = 'Sobrepeso';
+    else categoria = 'Obesidad';
+    /* ... */
+}</code></pre></div></div></div></div></div></div>
+    <!-- Modal Palabra Palíndroma -->
+    <div class="modal fade" id="palindromoModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">🔄 Solución: Palabra Palíndroma</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#pal-ejecutar" type="button" role="tab">Ejecutar</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#pal-explicacion" type="button" role="tab">Explicación</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#pal-codigo" type="button" role="tab">Código</button></li></ul><div class="tab-content pt-4"><div class="tab-pane fade show active" id="pal-ejecutar" role="tabpanel"><h5>Prueba el código aquí</h5><label class="form-label">Ingresa una palabra o frase:</label><input type="text" class="form-control" id="palabraPalindromo" placeholder="Anita lava la tina"><button class="btn btn-danger mt-3" onclick="ejecutarPalindromo()">Verificar</button><div id="resultadoPalindromo" class="resultado-area mt-3">Los resultados aparecerán aquí...</div></div><div class="tab-pane fade" id="pal-explicacion" role="tabpanel"><h6>Lógica del Programa</h6><p>Un palíndromo es una palabra o frase que se lee igual de izquierda a derecha que de derecha a izquierda. Para verificarlo, el programa primero "limpia" tu texto: lo convierte a minúsculas y elimina todos los espacios y signos de puntuación. Luego, crea una segunda versión de este texto limpio, pero invertida. Si el texto limpio y el texto invertido son idénticos, la frase es un palíndromo.</p></div><div class="tab-pane fade" id="pal-codigo" role="tabpanel"><pre><code>function ejecutarPalindromo() {
+    const texto = document.getElementById('palabraPalindromo').value;
+    const textoLimpio = texto.toLowerCase().replace(/[\W_]/g, '');
+    const textoInvertido = textoLimpio.split('').reverse().join('');
+    if (textoLimpio === textoInvertido) { /* Es palíndromo */ }
+    else { /* No es palíndromo */ }
+    /* ... */
+}</code></pre></div></div></div></div></div></div>
     
     <footer class="text-center p-4 mt-5">
         <p>🔧 Creado Por Victor-Tech 💻💻</p>
